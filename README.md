@@ -118,10 +118,6 @@ Cypien.shared.commerce.purchase(transactionId: "TXN-001", items: items, currency
 | `emitInterval` | `15.0` | Seconds between event batch sends |
 | `emitMode` | `.dual` | `.dual`, `.ga4Only`, `.backendOnly` |
 
-## Documentation
-
-Full documentation and integration guide: [cypien.ai/docs](https://cypien.ai/docs)
-
 ## License
 
 MIT © [Cypien AI](https://cypien.ai)
