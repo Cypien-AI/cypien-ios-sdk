@@ -14,20 +14,11 @@ Behavioral analytics and personalized content delivery SDK for iOS. Tracks user 
 
 ---
 
-## Example App
-
-See the SDK in action with a full working integration:
-
-**[Cypien SDK Test App](https://github.com/Cypien-AI/sdk-test-app)** — covers home, category, product detail, cart, and checkout screens.
-
----
-
 ## Table of Contents
 
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Setup](#setup)
-- [Analytics Account](#analytics-account)
 - [Page Integration](#page-integration)
   - [Home](#home)
   - [Category / List](#category--list)
@@ -89,7 +80,7 @@ targets: [
 
 ## Setup
 
-Initialize the SDK once at app startup. You need two values from the [Cypien Dashboard](https://dashboard.cypien.ai): **Workspace ID** and **API Key**.
+Initialize the SDK once at app startup. You need two values from Cypien: **Workspace ID** and **API Key**.
 
 ### SwiftUI
 
@@ -141,19 +132,6 @@ func applicationDidEnterBackground(_ application: UIApplication) {
     Cypien.shared.applicationDidEnterBackground()
 }
 ```
-
----
-
-## Analytics Account
-
-To surface Cypien dimensions (interest segment, personalization score, content interactions) in your GA4 account, connect your analytics property before going live:
-
-1. Open [Cypien Dashboard](https://dashboard.cypien.ai)
-2. Go to **Settings → Analytics → Connect GA4**
-3. Sign in with Google — use an account with at least **Editor** access on the GA4 property
-4. Select the GA4 property to connect
-
-> Without this step, the SDK continues to collect and send events. However, Cypien-specific dimensions will not appear in GA4 reports.
 
 ---
 
@@ -669,7 +647,7 @@ Opt-out state persists across app launches. When opted out, no events are collec
 ```swift
 CypienConfig(
     workspaceId: "YOUR_WORKSPACE_ID",  // Required
-    apiKey: "YOUR_API_KEY",            // Required — from Cypien Dashboard
+    apiKey: "YOUR_API_KEY",            // Required — from Cypien
     debugMode: false,                  // Enable verbose console logging
     emitInterval: 15.0,               // Seconds between batch sends
     emitMode: .dual                    // .dual | .ga4Only | .backendOnly
@@ -678,8 +656,8 @@ CypienConfig(
 
 | Parameter | Default | Description |
 |-----------|---------|-------------|
-| `workspaceId` | — | **Required.** Obtained from Cypien Dashboard |
-| `apiKey` | — | **Required.** SDK API key from Cypien Dashboard |
+| `workspaceId` | — | **Required.** Obtained from Cypien |
+| `apiKey` | — | **Required.** SDK API key from Cypien |
 | `debugMode` | `false` | Enables verbose console logging |
 | `emitInterval` | `15.0` | Seconds between event batch sends |
 | `emitMode` | `.dual` | `.dual` sends to GA4 + backend; `.ga4Only`; `.backendOnly` |
