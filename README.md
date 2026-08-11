@@ -74,8 +74,6 @@ targets: [
 ]
 ```
 
-> **Firebase (Optional):** If your app already includes `FirebaseAnalytics`, Cypien events are automatically forwarded to GA4. No additional configuration is needed — the SDK detects Firebase at runtime.
-
 ---
 
 ## Setup
@@ -626,7 +624,6 @@ Opt-out state persists across app launches. When opted out, no events are collec
 
 3. Batch Emission (every 15s by default)
    └─ POST /v1/events → Cypien backend
-   └─ Forwarded to Firebase GA4 (if FirebaseAnalytics is linked)
 
 4. Interest Assignment (backend)
    └─ Browsing patterns are analyzed
@@ -649,8 +646,7 @@ CypienConfig(
     workspaceId: "YOUR_WORKSPACE_ID",  // Required
     apiKey: "YOUR_API_KEY",            // Required — from Cypien
     debugMode: false,                  // Enable verbose console logging
-    emitInterval: 15.0,               // Seconds between batch sends
-    emitMode: .dual                    // .dual | .ga4Only | .backendOnly
+    emitInterval: 15.0                // Seconds between batch sends
 )
 ```
 
@@ -660,7 +656,6 @@ CypienConfig(
 | `apiKey` | — | **Required.** SDK API key from Cypien |
 | `debugMode` | `false` | Enables verbose console logging |
 | `emitInterval` | `15.0` | Seconds between event batch sends |
-| `emitMode` | `.dual` | `.dual` sends to GA4 + backend; `.ga4Only`; `.backendOnly` |
 
 ---
 
@@ -673,7 +668,7 @@ CypienConfig(
 | `initialize(config:)` | Initialize the SDK — call once at app startup |
 | `trackScreen(_ path:title:params:)` | Record a screen view |
 | `trackSearch(_ query:params:)` | Record a search query |
-| `track(event:parameters:)` | Send a custom GA4 event |
+| `track(event:parameters:)` | Send a custom analytics event |
 | `setUserId(_)` | Identify the current user |
 | `resetUser()` | Clear user identity on logout |
 | `setUserProperties(_)` | Set persistent user properties |
@@ -687,7 +682,7 @@ CypienConfig(
 
 ### Commerce (`Cypien.shared.commerce`)
 
-| Method | GA4 Event |
+| Method | Event |
 |--------|-----------|
 | `viewItem(item:currency:value:)` | `view_item` |
 | `viewItemList(items:listName:listId:)` | `view_item_list` |

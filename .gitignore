@@ -2,3 +2,6 @@
 *.xcodeproj
 *.xcworkspace
 .DS_Store
+.idea
+.codeindex
+.agent
