@@ -3,7 +3,7 @@
 [![iOS](https://img.shields.io/badge/iOS-13.0%2B-blue?logo=apple)](https://developer.apple.com)
 [![Swift](https://img.shields.io/badge/Swift-5.9%2B-orange?logo=swift)](https://swift.org)
 [![SPM](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen)](https://swift.org/package-manager)
-[![Version](https://img.shields.io/badge/version-1.0.2-orange)](https://github.com/Cypien-AI/cypien-ios-sdk/releases)
+[![GitHub release](https://img.shields.io/github/v/release/Cypien-AI/cypien-ios-sdk)](https://github.com/Cypien-AI/cypien-ios-sdk/releases/latest)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 
 Behavioral analytics and personalized content delivery SDK for iOS. Tracks user interactions to build interest profiles and serves personalized product descriptions, images, and banners — bringing web-level CRO personalization to native iOS apps.
